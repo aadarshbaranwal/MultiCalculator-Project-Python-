@@ -1,0 +1,124 @@
+Multi Calculator App – Program Explanation
+This project is a Python GUI-based Multi Calculator Application built using Tkinter.
+The application combines multiple calculators into a single interface, including:
+Normal Calculator
+Scientific Calculator
+BMI Calculator
+Age Calculator
+Currency Converter
+The app also supports Light and Dark themes and allows users to switch calculators dynamically using dropdown menus.
+==================================================================================================================
+1. Libraries Used
+The following Python libraries are imported at the beginning of the program:
+tkinter – Used to create the graphical user interface.
+ttk – Provides modern styled widgets like dropdowns and comboboxes.
+messagebox – Used to display error messages.
+datetime – Used for calculating age based on date of birth.
+math – Used for scientific calculations like square root, trigonometric functions, and logarithms.
+urllib.request – Used to fetch live currency exchange rates from an API.
+json – Used to parse the API response.
+These libraries together enable GUI creation, calculations, and real-time data handling. 
+===================================================================================================================
+2. Main Application Class (MultiCalculatorApp)
+MultiCalculatorApp inherits from tk.Tk and acts as the main window controller.
+Key Responsibilities:
+Sets window title and size.
+Defines Dark and Light themes.
+Creates dropdown menus for:
+Calculator selection
+Theme selection
+Manages switching between different calculator frames.
+Calculator Switching:
+Each calculator is created as a separate Frame, and only one frame is shown at a time using the tkraise() method.
+====================================================================================================================
+3. Theme System
+Two themes are defined:
+Dark Theme
+Light Theme
+Each theme controls:
+Background color
+Text color
+Button color
+Highlight color
+When the theme is changed, the update_theme() method updates all active calculator frames dynamically.
+====================================================================================================================
+4. Normal Calculator (NormalCalc)
+This calculator performs basic arithmetic operations.
+Features:
+Supports addition, subtraction, multiplication, and division.
+Uses buttons for number input.
+Uses Python’s eval() function to evaluate expressions.
+Includes:
+Clear (C) button
+Equals (=) button
+User input is displayed in a large entry field aligned to the right.
+====================================================================================================================
+5. Scientific Calculator (ScientificCalc)
+This calculator supports advanced mathematical operations.
+Supported Functions:
+Square root (sqrt)
+Logarithm (log)
+Trigonometric functions (sin, cos, tan)
+Power (^)
+Brackets
+Working:
+User input is converted into valid Python expressions.
+Trigonometric calculations are done in degrees.
+The expression is evaluated using eval() with proper error handling.
+===================================================================================================================
+6. BMI Calculator (BMICalc)
+The BMI Calculator calculates Body Mass Index using weight and height.
+Formula Used:
+BMI = weight (kg) / (height in meters)²
+Output:
+Displays BMI value
+Shows health category:
+Underweight
+Normal weight
+Overweight
+Obese
+Invalid input is handled gracefully.
+===================================================================================================================
+7. Age Calculator (AgeCalc)
+This calculator calculates a user’s current age.
+Input:
+Date of Birth in YYYY-MM-DD format
+Logic:
+Uses the datetime module
+Calculates age by comparing birth date with today’s date
+Displays age in years.
+===================================================================================================================
+8. Currency Converter (CurrencyConverter)
+This calculator converts currency using real-time exchange rates.
+Features:
+User enters amount
+Selects source currency
+Selects target currency
+Fetches live rates from:
+https://api.exchangerate-api.com
+Supported Currencies:
+USD, INR, EUR, GBP, JPY, AUD, CAD, CHF, CNY
+The converted amount is displayed with proper rounding.
+===================================================================================================================
+9. Error Handling
+The program includes error handling to manage:
+Invalid numeric inputs
+Incorrect date formats
+API connection failures
+Mathematical evaluation errors
+This ensures the application does not crash and provides user-friendly feedback.
+===================================================================================================================
+10. Program Execution
+The program starts execution from:
+if __name__ == "__main__":
+    MultiCalculatorApp().mainloop()
+This launches the main application window and keeps it running until closed by the user.
+===================================================================================================================
+11. Conclusion
+The Multi Calculator App is a well-structured Python GUI application that demonstrates:
+Object-Oriented Programming (OOP)
+Tkinter GUI design
+Real-time API usage
+Multiple calculators in a single interface
+Theme management
+It is suitable for academic projects, portfolio showcases, and learning GUI-based Python development.
